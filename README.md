@@ -1,0 +1,3 @@
+# cura-limoni
+
+app, per prendersi cura dei limoni con possibilità di annotare innaffiatura, concime, potatura, talee e raccolta tutto eseguito e con  la prossima data da eseguire...
