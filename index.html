@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestione Piante di Limone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌱 Gestione Piante di Limone</h1>
+      <p class="subtitle">Un'app per prenderti cura delle tue piante di limone con amore! 🍋</p>
+    </header>
+    <div class="task-list">
+      <!-- Innaffiatura -->
+      <div class="task card water">
+        <div class="task-icon">
+          <span>💧</span> <!-- Emoji per innaffiatura -->
+        </div>
+        <div class="task-content">
+          <h2>Innaffiatura</h2>
+          <p>Prossima innaffiatura: <span id="water-date">...</span></p>
+          <p class="note">💡 Controlla il terreno: se è asciutto, innaffia. Se è umido, aspetta 1-2 giorni.</p>
+          <div class="actions">
+            <button onclick="confirmAction('water')">Ho innaffiato</button>
+            <button onclick="openEditModal('water')">Modifica Data</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concimazione -->
+      <div class="task card fertilize">
+        <div class="task-icon">
+          <span>🌿</span> <!-- Emoji per concimazione -->
+        </div>
+        <div class="task-content">
+          <h2>Concimazione</h2>
+          <p>Prossima concimazione: <span id="fertilize-date">...</span></p>
+          <p class="note">💡 Usa un concime specifico per agrumi, ricco di azoto, fosforo e potassio.</p>
+          <div class="actions">
+            <button onclick="confirmAction('fertilize')">Ho concimato</button>
+            <button onclick="openEditModal('fertilize')">Modifica Data</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Potatura -->
+      <div class="task card prune">
+        <div class="task-icon">
+          <span>✂️</span> <!-- Emoji per potatura -->
+        </div>
+        <div class="task-content">
+          <h2>Potatura</h2>
+          <p>Prossima potatura: <span id="prune-date">...</span></p>
+          <p class="note">💡 Rimuovi rami secchi, malati o troppo fitti. Potatura principale a fine inverno.</p>
+          <div class="actions">
+            <button onclick="confirmAction('prune')">Ho potato</button>
+            <button onclick="openEditModal('prune')">Modifica Data</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Talee -->
+      <div class="task card cutting">
+        <div class="task-icon">
+          <span>🌱</span> <!-- Emoji per talee -->
+        </div>
+        <div class="task-content">
+          <h2>Talee</h2>
+          <p>Prossime talee: <span id="cutting-date">...</span></p>
+          <p class="note">💡 Periodo migliore: primavera. Usa un ormone radicante per migliorare il successo.</p>
+          <div class="actions">
+            <button onclick="confirmAction('cutting')">Ho fatto talee</button>
+            <button onclick="openEditModal('cutting')">Modifica Data</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Raccolta -->
+      <div class="task card harvest">
+        <div class="task-icon">
+          <span>🍋</span> <!-- Emoji per raccolta -->
+        </div>
+        <div class="task-content">
+          <h2>Raccolta</h2>
+          <p>Prossima raccolta: <span id="harvest-date">...</span></p>
+          <p class="note">💡 Raccogli i limoni quando sono gialli e leggermente morbidi al tatto.</p>
+          <div class="actions">
+            <button onclick="confirmAction('harvest')">Ho raccolto</button>
+            <button onclick="openEditModal('harvest')">Modifica Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2025 Creato da Mario Scioli. Tutti i diritti riservati.</p>
+    </footer>
+  </div>
+
+  <!-- Modal per la modifica delle date -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <h2>Modifica Data</h2>
+      <input type="date" id="edit-date-input">
+      <button onclick="saveEditedDate()">Salva</button>
+    </div>
+  </div>
+
+  <!-- Popup di conferma -->
+  <div id="confirm-popup" class="modal">
+    <div class="modal-content">
+      <p>Sei sicuro di voler confermare questa operazione?</p>
+      <button onclick="confirmOperation()">Conferma</button>
+      <button onclick="closeConfirmPopup()">Annulla</button>
+    </div>
+  </div>
+
+  <!-- Popup di aggiornamento -->
+  <div id="update-popup" class="modal">
+    <div class="modal-content">
+      <p>Operazione completata con successo!</p>
+      <button onclick="closeUpdatePopup()">Chiudi</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
